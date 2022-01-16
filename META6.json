@@ -1,0 +1,14 @@
+{
+    "perl" : "6.*",
+    "name" : "WebService::HashiCorp::Vault",
+    "version" : "1.0.0",
+    "author" : "Dean Powell",
+    "description" : "",
+    "depends" : [],
+    "provides" : {
+        "WebService::HashiCorp::Vault" : "lib/WebService/HashiCorp/Vault.pm6",
+        "WebService::HashiCorp::Vault::KeyStatus" : "lib/WebService/HashiCorp/Vault/KeyStatus.pm6",
+        "WebService::HashiCorp::Vault::SecretV1" : "lib/WebService/HashiCorp/Vault/SecretV1.pm6"
+    },
+    "source-url" : "https://github.com/PowellDean/WebService-HashiCorp-Vault"
+}
