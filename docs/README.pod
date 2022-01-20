@@ -1,0 +1,65 @@
+=begin pod
+
+=head1 NAME
+
+B<WebServices::HashiCorp::Vault>
+
+=head1 SYNOPSIS
+
+Provides a pure Raku wrapper around HashiCorp's Vault server API.
+
+
+=head1 DESCRIPTION
+
+This provides a programmatic way to save and retrieve sensitive data
+and its associated metadata. This can include things such as tokens,
+passwords, certificates, encryption keys, etc.
+
+
+=head1 EXAMPLES
+
+=head2 Create a new Vault instance.
+
+In this example, we explicitly pass in the URL for the Vault server,
+and we pass in the appropriate token for the autorized user.
+
+=begin code :lang<raku>
+use WebService::HashiCorp::Vault;
+my $client = Client.new(baseURL => 'http://127.0.0.1:8200',
+        token => 's.Jggkm7INJpbohBsmOULWZRfz');
+=end code
+
+You can also preset the environment variable $VAULT_ADDR, in which
+case you don't need to pass in the baseURL:
+
+=begin code :lang<raku>
+use WebService::HashiCorp::Vault;
+my $client = Client.new(token => 's.Jggkm7INJpbohBsmOULWZRfz');
+=end code
+
+B<And>, you can also preset the environment variable $VAULT_TOKEN,
+in which case you don't need to pass anything to initiate the Vault
+Client:
+
+=begin code :lang<raku>
+use WebService::HashiCorp::Vault;
+my $client = Client.new();
+=end code
+
+Or, finally:
+
+=begin code :lang<raku>
+use WebService::HashiCorp::Vault;
+my $client = Client.new(baseURL => 'http:127.0.0.1:8200');
+=end code
+
+
+=head1 AUTHOR
+
+Dean Powell <PowellDean@gmail.com>
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright (c) 2022, Dean Powell
+
+=end pod

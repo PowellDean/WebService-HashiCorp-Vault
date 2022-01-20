@@ -8,7 +8,8 @@
     "provides" : {
         "WebService::HashiCorp::Vault" : "lib/WebService/HashiCorp/Vault.pm6",
         "WebService::HashiCorp::Vault::KeyStatus" : "lib/WebService/HashiCorp/Vault/KeyStatus.pm6",
-        "WebService::HashiCorp::Vault::SecretV1" : "lib/WebService/HashiCorp/Vault/SecretV1.pm6"
+        "WebService::HashiCorp::Vault::SecretV1" : "lib/WebService/HashiCorp/Vault/SecretV1.pm6",
+        "WebService::HashiCorp::Vault::SecretV2" : "lib/WebService/HashiCorp/Vault/SecretV2.pm6"
     },
     "source-url" : "https://github.com/PowellDean/WebService-HashiCorp-Vault"
 }

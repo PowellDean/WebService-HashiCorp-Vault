@@ -1,6 +1,7 @@
 use Cro::HTTP::Client;
 use WebService::HashiCorp::Vault::KeyStatus;
 use WebService::HashiCorp::Vault::SecretV1;
+use WebService::HashiCorp::Vault::SecretV2;
 
 constant $defaultURL = 'http://127.0.0.1:8200';
 
@@ -47,8 +48,20 @@ class Client {
         $status;
     }
 
-    method getSecret(Str :$vault!, Str :$key!) {
+    method getSecretV1(Str :$vault!, Str :$key!) {
         my $k1 = SecretV1.new();
+        $k1.getSecret(
+            baseURL=>$!baseURL,
+            tkn=>$!token,
+            vault=>$vault,
+            key=>$key
+        );
+        
+        $k1;
+    }
+
+    method getSecretV2(Str :$vault!, Str :$key!) {
+        my $k1 = SecretV2.new();
         $k1.getSecret(
             baseURL=>$!baseURL,
             tkn=>$!token,
